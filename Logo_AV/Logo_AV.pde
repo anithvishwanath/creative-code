@@ -1,6 +1,6 @@
 void setup() {
-  size(600, 600);  // Set the window size to 640x480
-  background(255);  // White background
+  size(600, 600);
+  background(255); 
 
   // Calculate the center of the screen
   float centerX = width / 2;
@@ -9,7 +9,6 @@ void setup() {
   fill(0, 0, 0);
   noStroke();
 
-  // Offset the diamond and V-shape slightly so they're centered vertically
   float verticalOffset = -40;
 
   quad(centerX, centerY - 85 + verticalOffset,   // Top vertex
@@ -28,13 +27,14 @@ void setup() {
   vertex(centerX, centerY + 80 + verticalOffset);        // Middle vertex connecting V
   endShape(CLOSE);
   
-  // drawGrid();
+  //drawGrid();
   
   saveFrame("av-logo.png");
 }
 
 //void drawGrid() {
-//  stroke(85); 
+//  noFill();
+//  stroke(0, 175, 0, 150); 
 //  for (int x = 0; x <= width; x += 20) {
 //    line(x, 0, x, height);  // Vertical lines
 //  }
