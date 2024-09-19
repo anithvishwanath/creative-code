@@ -32,7 +32,7 @@ void draw() {
   
   //drawGrid();
   
-  saveFrame("av-logo.png");
+  saveFrame("output/av-logo.png");
 }
 
 //void drawGrid() {
