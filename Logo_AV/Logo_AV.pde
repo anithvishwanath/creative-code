@@ -1,7 +1,10 @@
 void setup() {
   size(600, 600);
-  background(255); 
+}
 
+void draw() {
+  background(255); 
+  
   // Calculate the center of the screen
   float centerX = width / 2;
   float centerY = height / 2;
