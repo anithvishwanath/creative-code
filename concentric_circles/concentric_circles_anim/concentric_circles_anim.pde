@@ -1,16 +1,19 @@
 int numCircles = 10;
 
-float minDiameter = 25;
-float maxDiameter = 500;
+float minDiameter = 1;
+float maxDiameter = 800;
 float diameterStep = (maxDiameter - minDiameter) / numCircles;
 
-float maxStroke = 1.5;
+float maxStroke = 5;
 float strokeStep = maxStroke / numCircles;
 
-float speed = 1.0;
+float speed = 1.5;
+
+int totalFrames = 120;
+int currentFrame = 0;
 
 void setup() {
-  size(600, 600);
+  size(1000, 1000);
   pixelDensity(2);
   frameRate(60);
 }
@@ -19,15 +22,29 @@ void draw() {
   background(255);
   noFill();
   
-  float animatedBaseDiameter = (frameCount * speed) % diameterStep;
+  float animatedBaseDiameter = (currentFrame * speed * (diameterStep / totalFrames)) % diameterStep;
+  // float animatedBaseDiameter = (frameCount * speed) % diameterStep;
   
-  for (int i = 0; i <= numCircles; i++) {
+  for (int i = 0; i < numCircles; i++) {
     float animatedDiameter = animatedBaseDiameter + i * diameterStep;
-   
     float currentStroke = maxStroke - i * strokeStep;
+    
+    float alpha = map(animatedDiameter, maxDiameter, minDiameter, 0, 255);
+    alpha = constrain(alpha, 0, 255);
+    
     strokeWeight(currentStroke);
-    stroke(0);
+    stroke(0, alpha);
     
     ellipse(width / 2, height / 2, animatedDiameter, animatedDiameter);
+  }
+  
+  if (currentFrame < totalFrames) {
+    saveFrame("output/frame-####.png");
+  }
+  
+  currentFrame++;
+  
+  if (currentFrame >= totalFrames) {
+    noLoop();
   }
 }
