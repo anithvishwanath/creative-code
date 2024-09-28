@@ -1,0 +1,19 @@
+{
+  "name": "generative-art",
+  "version": "1.0.0",
+  "main": "sketch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "canvas-sketch": "^0.7.7",
+    "canvas-sketch-cli": "^1.15.0",
+    "canvas-sketch-util": "^1.10.0",
+    "nice-color-palettes": "^3.0.0"
+  }
+}
