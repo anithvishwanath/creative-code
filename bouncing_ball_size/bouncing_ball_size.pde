@@ -21,12 +21,12 @@ void draw() {
   float minSize = 10;
   float maxSize = 50;
   
-  if (yPos >= height || yPos <= 0) {
+  if (yPos - rad <= 0 || yPos + rad >= height ) {
     ySpeed *= -1;
     radSpeed *= -1;
   }
   
-  if (xPos >= width || xPos <= 0) {
+  if (xPos - rad <= 0 || xPos + rad >= width) {
     xSpeed *= -1;
     radSpeed *= -1;
   }
