@@ -12,7 +12,7 @@ void setup() {
 }
 
 void draw() {
-  background(140);
+  background(120);
   
   noStroke();
   fill(rCircleFill, gCircleFill, bCircleFill);
@@ -24,14 +24,14 @@ void draw() {
 
   if (yPos >= height || yPos <= 0) {
     rCircleFill = random(255);
-    gCircleFill = random(255);
+    gCircleFill = random(150, 255);
     bCircleFill = random(255);
     ySpeed *= -1;
   }
   
   if (xPos >= width || xPos <= 0) {
     rCircleFill = random(255);
-    gCircleFill = random(255);
+    gCircleFill = random(150, 255);
     bCircleFill = random(255);
     xSpeed *= -1;
   }
