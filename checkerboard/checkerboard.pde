@@ -1,23 +1,22 @@
-float rectWidth, rectHeight, step;
+float spacing;
 
 void setup() {
-  size(240, 160);
-  pixelDensity(2);
-
-  rectWidth = 20;
-  rectHeight = 20;
-  step = 40;
+  size(320, 240);
+  //pixelDensity(2);
+  
+  spacing = 20;
 }
 
 void draw() {
   background(255);
-  noStroke();
-  fill(0);
+  stroke(255);
 
-  for (int i = 20; i < width; i += step) {
-    for (int j = 20; j < height; j += step) {
-      rect(0, j, width, rectHeight);
+  for (int j = 0; j < height; j += spacing) {
+    for (int i = 0; i < width; i += spacing) {
+      fill(random(255));
+      square(i, j, spacing);
     }
-    rect(i, 0, rectWidth, height);
   }
+  
+  noLoop();
 }
